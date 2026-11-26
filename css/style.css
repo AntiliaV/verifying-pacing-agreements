@@ -54,10 +54,10 @@ li::marker { color: #70877d; }
 /* The same navigation frame stays available throughout the publication. */
 .masthead { position: sticky; top: 0; z-index: 40; background: #f7f8f5f5; border-top: 3px solid #226352; border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
 .masthead-inner { max-width: 1440px; min-height: 68px; margin: auto; padding: 0 3.5rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
-.brand { display: inline-flex; align-items: center; gap: .7rem; color: var(--ink); font-size: .98rem; font-weight: 650; text-decoration: none; white-space: nowrap; letter-spacing: -.02em; }
-.brand-mark { width: 24px; height: 25px; border: 1.5px solid var(--link); border-radius: 4px; position: relative; background: linear-gradient(var(--link), var(--link)) 6px 5px / 2px 13px no-repeat, linear-gradient(var(--link), var(--link)) 13px 5px / 2px 13px no-repeat; }
-.masthead nav { display: flex; align-items: center; gap: 2rem; }
-.masthead nav a { color: var(--muted); font-size: .78rem; text-decoration: none; padding: .7rem 0; }
+.brand { display: inline-flex; align-items: center; gap: .7rem; color: var(--ink); font-size: .98rem; font-weight: 650; text-decoration: none; white-space: normal; min-width: 0; line-height: 1.35; letter-spacing: -.02em; }
+.brand-mark { flex: 0 0 auto; width: 24px; height: 25px; border: 1.5px solid var(--link); border-radius: 4px; position: relative; background: linear-gradient(var(--link), var(--link)) 6px 5px / 2px 13px no-repeat, linear-gradient(var(--link), var(--link)) 13px 5px / 2px 13px no-repeat; }
+.masthead nav { display: flex; flex-shrink: 0; align-items: center; gap: 2rem; }
+.masthead nav a { white-space: nowrap; color: var(--muted); font-size: .78rem; text-decoration: none; padding: .7rem 0; }
 .masthead nav a:hover { color: var(--link); }
 .wrap > .toc { grid-column: 1; grid-row: 1 / span 12; position: sticky; top: 7rem; align-self: start; max-height: calc(100dvh - 9rem); overflow-y: auto; padding-right: 1rem; }
 .toc-heading { font-size: .66rem; font-weight: 650; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.2rem; }

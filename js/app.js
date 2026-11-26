@@ -303,11 +303,11 @@
   }
 
   function contents(entries, extra) {
-    return h("nav", { class: "toc", "aria-label": "On this page" }, [
-      h("p", { class: "toc-heading" }, "On this page"),
+    return h("nav", { class: "toc", "aria-label": "Table of content" }, [
+      h("p", { class: "toc-heading" }, "Table of content"),
       h("button", { type: "button", class: "toc-toggle", "aria-expanded": "false", "aria-controls": "contents-list" }, [
         h("span", { class: "toc-mobile-prefix" }, "Contents"),
-        h("span", { class: "toc-current" }, "On this page"),
+        h("span", { class: "toc-current" }, "Table of content"),
         h("span", { class: "menu-icon", "aria-hidden": "true" })
       ]),
       h("ol", { id: "contents-list" }, entries.map(function (entry, i) {
@@ -324,12 +324,12 @@
   function renderMasthead() {
     document.body.insertBefore(h("header", { class: "masthead" },
       h("div", { class: "masthead-inner" }, [
-        h("a", { class: "brand", href: "index.html", "aria-label": "Pacing explorer home" }, [
-          h("span", { class: "brand-mark", "aria-hidden": "true" }), "Pacing explorer"
+        h("a", { class: "brand", href: "index.html", "aria-label": "Pacing the frontier: how to verify agreements? (Home)" }, [
+          h("span", { class: "brand-mark", "aria-hidden": "true" }), "Pacing the frontier: how to verify agreements?"
         ]),
         h("nav", { "aria-label": "Main navigation" }, [
-          h("a", { href: "index.html#tools" }, "Explore the tools"),
-          h("a", { href: "index.html#builder" }, "Package explorer"),
+          h("a", { href: "index.html#tools" }, "Verification interventions"),
+          h("a", { href: "index.html#builder" }, "Verification package builder"),
           h("a", { href: "index.html#appendix" }, T.appendix)
         ])
       ])
@@ -441,7 +441,6 @@
     var ctx = newCtx();
     document.title = DATA.siteTitle;
     view.appendChild(h("header", { class: "site-head", id: "introduction" }, [
-      h("p", { class: "eyebrow" }, "Pacing explorer"),
       h("h1", { tabindex: "-1" }, DATA.siteTitle),
       h("div", { class: "hero-actions" }, [
         h("a", { class: "button-primary", href: "#tools" }, "Explore the tools ↓"),
