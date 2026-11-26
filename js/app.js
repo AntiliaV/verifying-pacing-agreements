@@ -303,11 +303,11 @@
   }
 
   function contents(entries, extra) {
-    return h("nav", { class: "toc", "aria-label": "Table of content" }, [
-      h("p", { class: "toc-heading" }, "Table of content"),
+    return h("nav", { class: "toc", "aria-label": "Table of contents" }, [
+      h("p", { class: "toc-heading" }, "Table of contents"),
       h("button", { type: "button", class: "toc-toggle", "aria-expanded": "false", "aria-controls": "contents-list" }, [
         h("span", { class: "toc-mobile-prefix" }, "Contents"),
-        h("span", { class: "toc-current" }, "Table of content"),
+        h("span", { class: "toc-current" }, "Table of contents"),
         h("span", { class: "menu-icon", "aria-hidden": "true" })
       ]),
       h("ol", { id: "contents-list" }, entries.map(function (entry, i) {
@@ -441,11 +441,7 @@
     var ctx = newCtx();
     document.title = DATA.siteTitle;
     view.appendChild(h("header", { class: "site-head", id: "introduction" }, [
-      h("h1", { tabindex: "-1" }, DATA.siteTitle),
-      h("div", { class: "hero-actions" }, [
-        h("a", { class: "button-primary", href: "#tools" }, "Explore the tools ↓"),
-        h("a", { class: "button-secondary", href: "#builder" }, "Build a package →")
-      ])
+      h("h1", { tabindex: "-1" }, DATA.siteTitle)
     ]));
     view.appendChild(h("div", { class: "intro" }, DATA.introduction.map(function (p) { return para(p, ctx); })));
     view.appendChild(contents(homeOrder.map(function (id) { return { id: id, label: homeLabels[id] }; })));
