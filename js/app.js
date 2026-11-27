@@ -328,9 +328,9 @@
           h("span", { class: "brand-mark", "aria-hidden": "true" }), "Pacing the frontier: how to verify agreements?"
         ]),
         h("nav", { "aria-label": "Main navigation" }, [
-          h("a", { href: "index.html#tools" }, "Verification interventions"),
-          h("a", { href: "index.html#builder" }, "Verification package builder"),
-          h("a", { href: "index.html#appendix" }, T.appendix)
+          h("a", { href: page === "home" ? "#glossary" : "index.html#glossary", onclick: function () {
+            if (page === "home") { scrollToSection("glossary", true); }
+          } }, T.glossary)
         ])
       ])
     ), document.getElementById("main"));

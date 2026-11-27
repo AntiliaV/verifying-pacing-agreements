@@ -56,6 +56,20 @@ ul.bullets, ol.bullets, .plain-list { padding-left: 1.4rem; }
 .bullets li, .plain-list li { padding-left: .2rem; margin-bottom: .8rem; }
 li::marker { color: #70877d; }
 
+/* Justified prose shares a straight right edge; hyphenation avoids large word gaps. */
+.intro > p, .wrap > section > p, .proposal-body > p,
+.builder-text > p, .reference-body > p, .card-text,
+.bullets > li, .plain-list > li, .notes > li,
+.glossary dd, .justification, .source-list > li,
+.package-output > p:not(.chain), .behaviours td:last-child {
+  text-align: justify;
+  text-align-last: start;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
 /* The same navigation frame stays available throughout the publication. */
 .masthead { position: sticky; top: 0; z-index: 40; background: #f7f8f5f5; border-top: 3px solid #226352; border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
 .masthead-inner { max-width: var(--layout-width); min-height: 68px; margin: auto; padding: 0 var(--page-gutter); display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
@@ -341,7 +355,6 @@ button.term:hover, button.term[aria-expanded="true"] { background: #dfeada; }
   .masthead-inner { min-height: 60px; }
   .masthead nav { gap: 1rem; }
   .masthead nav a { font-size: .72rem; }
-  .masthead nav a:last-child { display: none; }
   .wrap { display: block; max-width: calc(var(--measure) + var(--page-gutter) * 2); padding: 5rem var(--page-gutter) 4rem; }
   .wrap > .toc { position: fixed; z-index: 35; left: 0; right: 0; top: 64px; max-height: calc(100dvh - 64px); padding: 0; overflow-y: auto; background: #f7f8f5fa; border-bottom: 1px solid var(--line); }
   .toc-heading { display: none; }
@@ -379,7 +392,6 @@ button.term:hover, button.term[aria-expanded="true"] { background: #dfeada; }
   .brand { font-size: .88rem; gap: .55rem; }
   .brand-mark { width: 22px; height: 24px; }
   .masthead nav a { font-size: .69rem; }
-  .masthead nav a:nth-child(2) { display: none; }
   .wrap { padding: 4.5rem var(--page-gutter) 3rem; }
   .toc-toggle { padding-left: 1.25rem; padding-right: 1.25rem; }
   .eyebrow { font-size: .62rem; margin-bottom: 1rem; }
@@ -456,7 +468,6 @@ button.term:hover, button.term[aria-expanded="true"] { background: #dfeada; }
 }
 @media (max-width: 359px) {
   h1 { font-size: 2.5rem; }
-  .masthead nav { display: none; }
   .tool-toolbar { display: block; }
   .tool-switch { width: 100%; margin-top: 1rem; }
 }
